@@ -20,6 +20,11 @@ describe('Card', function() {
     expect(card.question).to.equal('What allows you to define a set of related information using key-value pairs?');
   });
 
+  it('should store an id', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    expect(card.id).to.equal(1);
+  });
+
   it('should store a list of possible answers', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     expect(card.answers).to.deep.equal(['object', 'array', 'function']);
