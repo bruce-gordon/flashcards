@@ -6,11 +6,11 @@ const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 
 describe('Round', function() {
-let card1;
-let card2;
-let card3;
-let deck;
-let round;
+  let card1;
+  let card2;
+  let card3;
+  let deck;
+  let round;
 
   beforeEach(function() {
     card1 = new Card(1, 'What is the name of my cat?', ['Kitty', 'Cat', 'Pepper'], 'Pepper');
