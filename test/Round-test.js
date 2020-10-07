@@ -72,4 +72,11 @@ let round;
     expect(round.incorrectGuesses).to.deep.equal([1, 3]);
     expect(round.calculatePercentCorrect()).to.equal(33);
   });
+
+  it('should print a score at the end of the round', function() {
+    round.takeTurn('Kitty');
+    round.takeTurn('Colorado');
+    round.takeTurn('White');
+    expect(round.endRound()).to.equal(`** Round over! ** You answered 33% of the questions correctly!`)
+  })
 });
