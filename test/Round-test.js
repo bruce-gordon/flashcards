@@ -78,5 +78,5 @@ describe('Round', function() {
     round.takeTurn('Colorado');
     round.takeTurn('White');
     expect(round.endRound()).to.equal(`** Round over! ** You answered 33% of the questions correctly!`)
-  })
+  });
 });
