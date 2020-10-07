@@ -53,7 +53,6 @@ let round;
     expect(round.takeTurn('Maine')).to.equal('incorrect!')
     expect(round.guesses).to.deep.equal(['Pepper', 'Maine']);
     expect(round.guesses.length).to.equal(2);
-
   });
 
   it('should store ids of incorrect guesses', function() {
@@ -71,5 +70,6 @@ let round;
     expect(round.incorrectGuesses).to.deep.equal([1]);
     round.takeTurn('White');
     expect(round.incorrectGuesses).to.deep.equal([1, 3]);
+    expect(round.calculatePercentCorrect()).to.equal(33);
   });
 });
