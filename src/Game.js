@@ -32,6 +32,8 @@ class Game {
     this.createCards(data);
     this.createDeck();
     this.createRound();
+    this.printMessage(this.deck, this.currentRound);
+    this.printQuestion(this.currentRound);
   }
 
   printMessage(deck, round) {
