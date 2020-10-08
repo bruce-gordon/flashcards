@@ -16,7 +16,7 @@ node index.js
 
 When you start the game you will see the following message, followed by the first question:
 
-![flashcards screenshot](src="https://user-images.githubusercontent.com/68293135/95514011-79419a00-0978-11eb-8e52-759c01deec7a.png">)
+![flashcards screenshot](https://user-images.githubusercontent.com/68293135/95514011-79419a00-0978-11eb-8e52-759c01deec7a.png)
 
 Answer the question by selecting it with the arrow keys, or by typing in the number corresponding to the answer.  Then press "enter".  You will immediately know if your answer is correct or incorrect, and then the next question will display.  Continue playing until all questions are answered.  At the end of the round you will see what percent of questions were answered correctly.
 
