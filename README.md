@@ -14,12 +14,13 @@ node index.js
 
 ## Game Play
 
-When you start the game you will the following message, followed by the first question:
+When you start the game you will see the following message, followed by the first question:
 
 ![flashcards screenshot](<img width="711" alt="Screen Shot 2020-10-08 at 3 09 55 PM" src="https://user-images.githubusercontent.com/68293135/95514011-79419a00-0978-11eb-8e52-759c01deec7a.png">)
 
+Answer the question by selecting it with the arrow keys, or by typing in the number corresponding to the answer.  Then press "enter".  You will immediately know if your answer is correct or incorrect, and then the next question will display.  Continue playing until all questions are answered.  At the end of the round you will see what percent of questions were answered correctly.
 
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+![flash cards example gif](https://media.giphy.com/media/5azsQvwghE7bmdphUT/giphy.gif)
 
 **Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
 
