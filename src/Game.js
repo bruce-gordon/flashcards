@@ -13,11 +13,13 @@ class Game {
     this.currentRound
   }
 
-  createCards(questions) {
-    questions.forEach(question => {
-      let card = new Card(question.id, question.question, question.answers, question.correctAnswer);
-      this.cards.push(card);
-    })
+  createCards(questions = prototypeQuestions) {
+    if (questions) {
+      questions.forEach(question => {
+        let card = new Card(question.id, question.question, question.answers, question.correctAnswer);
+        this.cards.push(card);
+      })
+    }
   }
 
   createDeck() {
@@ -29,16 +31,16 @@ class Game {
   }
 
   printMessage(deck, round) {
-      console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 
   printQuestion(round) {
-      util.main(round);
+    util.main(round);
   }
 
-  start(questions) {
-    this.createCards(questions);
+  start() {
+    this.createCards();
     this.createDeck();
     this.createRound();
     this.printMessage(this.deck, this.currentRound);
