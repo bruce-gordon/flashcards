@@ -38,10 +38,6 @@ describe('Game', function() {
     expect(Game).to.be.a('function');
   });
 
-  it('should track the current round', () => {
-    expect(game.currentRound).to.equal(0);
-  });
-
   it('should create cards from the data', () => {
     game.createCards(data);
     expect(game.cards[0]).to.deep.equal({id: 1, question: "What is my cat's name?", answers: ['Kitty', 'Cat', 'Pepper'], correctAnswer: "Pepper"});
@@ -54,8 +50,17 @@ describe('Game', function() {
 
   it('should create a deck', () => {
     game.createCards(data);
+    game.createDeck();
     expect(game.deck.cards).to.be.an('array');
     expect(game.deck).to.be.an('object');
     expect(game.deck.countCards()).to.equal(3);
   })
+
+  it('should track the current round', () => {
+    game.createCards(data);
+    game.createDeck();
+    game.createRound();
+    expect(game.currentRound.deck.length).to.equal(3);
+    expect(game.currentRound.guesses).to.deep.equal([]);
+  });
 });

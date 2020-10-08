@@ -8,9 +8,9 @@ const Deck = require('../src/Deck');
 
 class Game {
   constructor() {
-    this.currentRound = 0,
     this.cards = [],
-    this.deck = new Deck(this.cards)
+    this.deck,
+    this.currentRound
   }
 
   createCards(data) {
@@ -20,8 +20,18 @@ class Game {
     }
   }
 
+  createDeck() {
+    this.deck = new Deck(this.cards);
+  }
+
+  createRound() {
+    this.currentRound = new Round(this.deck.cards);
+  }
+
   start(data) {
     this.createCards(data);
+    this.createDeck();
+    this.createRound();
   }
 
   printMessage(deck, round) {
