@@ -16,10 +16,7 @@ node index.js
 
 When you start the game you will the following message, followed by the first question:
 
-```
-Node server running on port 3000
-Welcome to FlashCards! You are playing with 30 cards.
-```
+![flashcards screenshot] (<img width="711" alt="Screen Shot 2020-10-08 at 3 09 55 PM" src="https://user-images.githubusercontent.com/68293135/95514011-79419a00-0978-11eb-8e52-759c01deec7a.png">)
 
 
 ![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
