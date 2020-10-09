@@ -48,11 +48,31 @@ describe('Round', function() {
     expect(round.currentCard).to.equal(card2);
   });
 
-  it('should record a guess and give feedback', function() {
+  it('should give feedback on a correct guess', function() {
     expect(round.takeTurn('Pepper')).to.equal('correct!');
-    expect(round.takeTurn('Maine')).to.equal('incorrect!')
-    expect(round.guesses).to.deep.equal(['Pepper', 'Maine']);
-    expect(round.guesses.length).to.equal(2);
+    expect(round.incorrectGuesses).to.deep.equal([]);
+    expect(round.guesses.length).to.equal(1);
+  });
+
+  it('should give feedback on an incorrect guess', function() {
+    expect(round.takeTurn('Kitty')).to.equal('incorrect!')
+    expect(round.incorrectGuesses).to.deep.equal([1]);
+    expect(round.guesses.length).to.equal(1);
+  });
+
+  it('should store all guesses', function() {
+    round.takeTurn('Kitty');
+    expect(round.guesses).to.deep.equal(['Kitty']);
+    round.takeTurn('Colorado');
+    expect(round.guesses).to.deep.equal(['Kitty', 'Colorado']);
+  })
+
+  it('should store questions that have incorrect guesses', function() {
+    expect(round.missedQuestions).to.deep.equal([]);
+    round.takeTurn('Kitty');
+    expect(round.missedQuestions).to.deep.equal(['What is the name of my cat?']);
+    round.takeTurn('Colorado');
+    expect(round.missedQuestions).to.deep.equal(['What is the name of my cat?']);
   });
 
   it('should store ids of incorrect guesses', function() {
@@ -71,12 +91,5 @@ describe('Round', function() {
     round.takeTurn('White');
     expect(round.incorrectGuesses).to.deep.equal([1, 3]);
     expect(round.calculatePercentCorrect()).to.equal(33);
-  });
-
-  it('should print a score at the end of the round', function() {
-    round.takeTurn('Kitty');
-    round.takeTurn('Colorado');
-    round.takeTurn('White');
-    expect(round.endRound()).to.equal(`** Round over! ** You answered 33% of the questions correctly!`)
   });
 });

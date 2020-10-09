@@ -1,7 +1,6 @@
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
-const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 const Round = require('../src/Round');
 const Deck = require('../src/Deck');
@@ -46,6 +45,6 @@ class Game {
     this.printMessage(this.deck, this.currentRound);
     this.printQuestion(this.currentRound);
   }
-};
+}
 
 module.exports = Game;

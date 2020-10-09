@@ -7,6 +7,7 @@ class Round {
     this.turns = 0,
     this.guesses = [],
     this.incorrectGuesses = [],
+    this.missedQuestions = [],
     this.feedback
   }
   returnCurrentCard() {
@@ -18,7 +19,8 @@ class Round {
     this.feedback = currentTurn.giveFeedback();
     if (!currentTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
-    };
+      this.missedQuestions.push(this.currentCard.question);
+    }
     this.turns++;
     this.currentCard = this.deck[this.turns];
     return this.feedback;
@@ -28,11 +30,19 @@ class Round {
     let percentCorrect = correctAnswers / this.guesses.length;
     return Math.floor(percentCorrect * 100);
   }
+  generateReportCard() {
+    console.log(`REPORT CARD - You missed the following questions:`)
+    this.missedQuestions.forEach(question => {
+      console.log(`- ${question}`);
+    })
+    console.log(`**Study these questions and try again!**`)
+  }
+
   endRound() {
     let endMessage = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
     console.log(endMessage);
-    return endMessage;
+    this.generateReportCard();
   }
-};
+}
 
 module.exports = Round;
