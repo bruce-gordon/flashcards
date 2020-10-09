@@ -44,12 +44,14 @@ describe('Turn', function() {
     expect(turn.returnCard()).to.be.an('object');
   });
 
-  it('should evaluate a guess', function() {
+  it('should evaluate a correct guess', function() {
     const turn1 = new Turn('Pepper', card);
-    const turn2 = new Turn('Kitty', card);
     expect(turn1.evaluateGuess()).to.equal(true);
-    expect(turn2.evaluateGuess()).to.equal(false);
-    expect(turn1.evaluateGuess()).to.be.a('boolean');
+  });
+
+  it('should evaluate an incorrect guess', function() {
+    const turn1 = new Turn('Kitty', card);
+    expect(turn1.evaluateGuess()).to.equal(false);
   });
 
   it('should give feedback about the guess', function() {
