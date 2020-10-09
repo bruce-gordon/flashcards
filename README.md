@@ -22,24 +22,14 @@ Answer the question by selecting it with the arrow keys, or by typing in the num
 
 ![flash cards example gif](https://media.giphy.com/media/5azsQvwghE7bmdphUT/giphy.gif)
 
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
+In addition to a percent of correct answers, the game will also print a **report card** which lists out which questions were missed so that you can study and try again.
 
-## Running Your Tests
+## Tech Stack
 
-Run your test suite using the command:
+This app includes javascript, mocha, and chai.
 
-```bash
-npm test
-```
+## Challenges and Wins
 
-The test results will output to the terminal.
+- One challenge was writing all of the tests required for each js file, as my experience in writing tests was limited prior to this.  I improved at TDD by completing this project and successfully wrote a range of tests for each javascript class in the app.
+- This was my first experience using Command Line Interface and running an app from the terminal.  This presented a challenge when it came to properly linking all of the files so that the app would work correctly, but I did so successfully.
 
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
----
