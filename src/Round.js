@@ -20,7 +20,7 @@ class Round {
     if (!currentTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
       this.missedQuestions.push(this.currentCard.question);
-    };
+    }
     this.turns++;
     this.currentCard = this.deck[this.turns];
     return this.feedback;
@@ -43,6 +43,6 @@ class Round {
     console.log(endMessage);
     this.generateReportCard();
   }
-};
+}
 
 module.exports = Round;
